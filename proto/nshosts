@@ -1,0 +1,3 @@
+com.mnyun.demo.helloService:
+- host: 191.268.0.125
+  port: 3000

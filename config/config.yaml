@@ -1,0 +1,65 @@
+# 服务节点配置
+
+options:
+  # http监听地址
+  httpAddr: ':8000'
+  #thrift服务监听地址
+  thriftAddr: ':9000'
+
+  # 协议存放目录
+  pdlPath: './pdl'
+  # 提供服务的服务器地址列表存放目录
+  hostPath: './host'
+  # 路由根路径
+  baseRouter: '/v1'
+  # 根命名空间
+  baseNamespace: 'com.mnyun.'
+  # 是否监听host文件目录变动
+  watchHostChanged: true
+  # 是否监听协议目录文件变动
+  watchPDLChanged: true
+  # 服务器地址存储文件后掇
+  hostExt: '.host'
+  # 协议文件后掇
+  pdlExt: '.pdl'
+  # 向服务器发送数据超时时间(秒)
+  writeTimeout: 2
+  # 从服务器读取数据超时时间(秒)
+  readTimeout: 2
+  # 连接服务器超时时间(秒)
+  connectTimeout: 2
+  # 连接池中空闲服务连接保持时间(秒)
+  clientPoolKeepAlive: 120 # 2 * 60
+  # 连接失败的服务器重试连接时间间隔(秒)
+  connectFailRetry: 120 #2 * 60
+  # 与服务器连接的心跳频率
+  heartbeat: 300
+  # 允许丢失的最大心跳次数
+  heartbeatLoss: 3
+
+  # 是否使用路由，不使用，填false
+  enableRouter: true
+  # 路由客户端id编号
+  routerId: 'client1'
+  # 路由服务器地址
+  routerSvr: '127.0.0.1:3004'
+  # 路由配置
+  router:
+    # 发送缓冲区大小
+    sendBufSize: 512
+    # 接收缓冲区大小
+    recvBufSize: 512
+    # 连接超时(秒)
+    connectTimeout: 180
+    # 发送超时(秒)
+    readTimeout: 120
+    # 接收数据超时(秒)
+    writeTimeout: 120
+    # 允许丢失心跳包的最大次数
+    allowMaxLoss: 3
+    # 是否输出调试信息
+    enableDebug: false
+    # 断线重试连接的最大次数
+    tryConnectCount: 5
+    # 重试连接间隔时间(秒)
+    tryConnectSpeed: 60
